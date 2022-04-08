@@ -14533,35 +14533,35 @@ all of MD as it is not optimized for dense, information rich UIs.
     </p>
     <h1>
      <center>
-      Topic Name
+      Primary Education Across Multiple Countries
      </center>
     </h1>
     <h4>
      <center>
-      <a href="https://author1.github.io/" style="text-decoration:none">
-       Author 1
+      <a href="https://github.com/varunb0801" style="text-decoration:none">
+       Varun Barala
       </a>
       , IIT Gandhinagar,
-      <a href="mailto:&lt;author1&gt;@iitgn.ac.in" style="text-decoration:none">
-       author1@iitgn.ac.in
+      <a href="mailto:barala.v@iitgn.ac.in" style="text-decoration:none">
+       barala.v@iitgn.ac.in
       </a>
       <br/>
       <br/>
-      <a href="https://author2.github.io/" style="text-decoration:none">
-       Author 2
-      </a>
-      , IIT Gandhinagar,
-      <a href="mailto:&lt;author2&gt;@iitgn.ac.in" style="text-decoration:none">
-       author2@iitgn.ac.in
-      </a>
-      <br/>
-      <br/>
-      <a href="https://author3.github.io/" style="text-decoration:none">
-       Author 3
+      <a href="https://github.com/Shaan-403" style="text-decoration:none">
+       Shantanu Sahu
       </a>
       , IIT Gandhinagar,
-      <a href="mailto:&lt;author3&gt;@iitgn.ac.in" style="text-decoration:none">
-       author3@iitgn.ac.in
+      <a href="mailto:shantanu.s@iitgn.ac.in" style="text-decoration:none">
+       shantanu.s@iitgn.ac.in
+      </a>
+      <br/>
+      <br/>
+      <a href="https://github.com/Aditya-Shakya3000" style="text-decoration:none">
+       Aditya Shakya
+      </a>
+      , IIT Gandhinagar,
+      <a href="mailto:s.aditya@iitgn.ac.in" style="text-decoration:none">
+       s.aditya@iitgn.ac.in
       </a>
      </center>
     </h4>
@@ -14575,6 +14575,530 @@ all of MD as it is not optimized for dense, information rich UIs.
      <a href="https://github.com/&lt;repo_user&gt;/&lt;repo_name&gt;">
       <img alt="Repo" src="https://img.shields.io/badge/GitHub-&lt;repo_name&gt;-brightgreen"/>
      </a>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [13]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-python">
+        <pre><span></span><span class="c1">#2000-2020</span>
+<span class="c1">#x-axis -&gt; %male</span>
+<span class="c1">#y-axis -&gt; %female</span>
+<span class="c1">#size -&gt; max(total teachers)</span>
+<span class="c1">#Animation -&gt; year</span>
+<span class="kn">from</span> <span class="nn">plotly.offline</span> <span class="kn">import</span> <span class="n">plot</span><span class="p">,</span> <span class="n">iplot</span><span class="p">,</span> <span class="n">init_notebook_mode</span>
+<span class="n">init_notebook_mode</span><span class="p">(</span><span class="n">connected</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="c1">#from google.colab import files</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'./data/Data_final.csv'</span><span class="p">)</span>
+
+<span class="n">mean_value</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">'Primary Trained Male'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'Primary Trained Male'</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">mean_value</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">mean_value</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">'Primary Trained Female'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'Primary Trained Female'</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">mean_value</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">{</span><span class="o">*</span><span class="p">()}</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16226</span><span class="p">):</span>
+  <span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">'Country Name'</span><span class="p">]</span>
+  <span class="n">x</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> 
+
+<span class="n">country_name</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+
+<span class="n">year</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span><span class="mi">2021</span><span class="p">):</span>
+  <span class="n">year</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span><span class="mi">2020</span><span class="p">):</span>
+  <span class="n">x_arr</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="n">y_arr</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="n">ratio</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16226</span><span class="p">):</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">'Year'</span><span class="p">]</span> <span class="o">==</span> <span class="n">y</span><span class="p">):</span>
+      <span class="n">x_arr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">'Primary Trained Male'</span><span class="p">])</span>
+      <span class="n">y_arr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">'Primary Trained Female'</span><span class="p">])</span>
+      <span class="n">ratio</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">'Primary Trained Female'</span><span class="p">]</span><span class="o">/</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">'Primary Trained Male'</span><span class="p">])</span>
+  <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x_arr</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y_arr</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="n">ratio</span><span class="p">,</span> <span class="n">hover_data</span><span class="o">=</span><span class="p">[</span><span class="n">country_name</span><span class="p">],</span> <span class="n">color</span> <span class="o">=</span> <span class="n">country_name</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s2">"Female Trained Teachers / Male Trained Teachers in different countries"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="s2">" "</span><span class="p">)</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span> <span class="n">y</span><span class="p">),</span> <span class="n">labels</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">"Primary Trained Male (%)"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">"Primary Trained Female (%)"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"Place"</span><span class="p">))</span>
+
+  <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="c1"># print(ratio)</span>
+<span class="c1"># new_ratio = np.array([x*2000 for x in ratio])</span>
+</pre>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+     </div>
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+     </div>
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+     </div>
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+     </div>
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+     </div>
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+     </div>
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+     </div>
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+       <pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">KeyboardInterrupt</span>                         Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">C:\Users\HPPH~1\AppData\Local\Temp/ipykernel_26392/3184189660.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">     37</span>   ratio <span class="ansi-yellow-intense-fg ansi-bold">=</span> <span class="ansi-yellow-intense-fg ansi-bold">[</span><span class="ansi-yellow-intense-fg ansi-bold">]</span>
+<span class="ansi-green-fg">     38</span>   <span class="ansi-green-intense-fg ansi-bold">for</span> i <span class="ansi-green-intense-fg ansi-bold">in</span> range<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-cyan-intense-fg ansi-bold">16226</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-intense-fg ansi-bold">---&gt; 39</span><span class="ansi-yellow-intense-fg ansi-bold">     </span><span class="ansi-green-intense-fg ansi-bold">if</span><span class="ansi-yellow-intense-fg ansi-bold">(</span>df<span class="ansi-yellow-intense-fg ansi-bold">.</span>iloc<span class="ansi-yellow-intense-fg ansi-bold">[</span>i<span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">[</span><span class="ansi-blue-intense-fg ansi-bold">'Year'</span><span class="ansi-yellow-intense-fg ansi-bold">]</span> <span class="ansi-yellow-intense-fg ansi-bold">==</span> y<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-fg">     40</span>       x_arr<span class="ansi-yellow-intense-fg ansi-bold">.</span>append<span class="ansi-yellow-intense-fg ansi-bold">(</span>df<span class="ansi-yellow-intense-fg ansi-bold">.</span>iloc<span class="ansi-yellow-intense-fg ansi-bold">[</span>i<span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">[</span><span class="ansi-blue-intense-fg ansi-bold">'Primary Trained Male'</span><span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">     41</span>       y_arr<span class="ansi-yellow-intense-fg ansi-bold">.</span>append<span class="ansi-yellow-intense-fg ansi-bold">(</span>df<span class="ansi-yellow-intense-fg ansi-bold">.</span>iloc<span class="ansi-yellow-intense-fg ansi-bold">[</span>i<span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">[</span><span class="ansi-blue-intense-fg ansi-bold">'Primary Trained Female'</span><span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+
+<span class="ansi-green-intense-fg ansi-bold">D:\SEM-6_MATERIALS\Databases\Anaconda\lib\site-packages\pandas\core\series.py</span> in <span class="ansi-cyan-fg">__getitem__</span><span class="ansi-blue-intense-fg ansi-bold">(self, key)</span>
+<span class="ansi-green-fg">    940</span> 
+<span class="ansi-green-fg">    941</span>         <span class="ansi-green-intense-fg ansi-bold">elif</span> key_is_scalar<span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-intense-fg ansi-bold">--&gt; 942</span><span class="ansi-yellow-intense-fg ansi-bold">             </span><span class="ansi-green-intense-fg ansi-bold">return</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>_get_value<span class="ansi-yellow-intense-fg ansi-bold">(</span>key<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">    943</span> 
+<span class="ansi-green-fg">    944</span>         <span class="ansi-green-intense-fg ansi-bold">if</span> is_hashable<span class="ansi-yellow-intense-fg ansi-bold">(</span>key<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+
+<span class="ansi-green-intense-fg ansi-bold">D:\SEM-6_MATERIALS\Databases\Anaconda\lib\site-packages\pandas\core\series.py</span> in <span class="ansi-cyan-fg">_get_value</span><span class="ansi-blue-intense-fg ansi-bold">(self, label, takeable)</span>
+<span class="ansi-green-fg">   1049</span> 
+<span class="ansi-green-fg">   1050</span>         <span class="ansi-red-intense-fg ansi-bold"># Similar to Index.get_value, but we do not fall back to positional</span>
+<span class="ansi-green-intense-fg ansi-bold">-&gt; 1051</span><span class="ansi-yellow-intense-fg ansi-bold">         </span>loc <span class="ansi-yellow-intense-fg ansi-bold">=</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>index<span class="ansi-yellow-intense-fg ansi-bold">.</span>get_loc<span class="ansi-yellow-intense-fg ansi-bold">(</span>label<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">   1052</span>         <span class="ansi-green-intense-fg ansi-bold">return</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>index<span class="ansi-yellow-intense-fg ansi-bold">.</span>_get_values_for_loc<span class="ansi-yellow-intense-fg ansi-bold">(</span>self<span class="ansi-yellow-intense-fg ansi-bold">,</span> loc<span class="ansi-yellow-intense-fg ansi-bold">,</span> label<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">   1053</span> 
+
+<span class="ansi-green-intense-fg ansi-bold">D:\SEM-6_MATERIALS\Databases\Anaconda\lib\site-packages\pandas\core\indexes\base.py</span> in <span class="ansi-cyan-fg">get_loc</span><span class="ansi-blue-intense-fg ansi-bold">(self, key, method, tolerance)</span>
+<span class="ansi-green-fg">   3357</span>                     <span class="ansi-blue-intense-fg ansi-bold">"backfill or nearest lookups"</span>
+<span class="ansi-green-fg">   3358</span>                 )
+<span class="ansi-green-intense-fg ansi-bold">-&gt; 3359</span><span class="ansi-yellow-intense-fg ansi-bold">             </span>casted_key <span class="ansi-yellow-intense-fg ansi-bold">=</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>_maybe_cast_indexer<span class="ansi-yellow-intense-fg ansi-bold">(</span>key<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">   3360</span>             <span class="ansi-green-intense-fg ansi-bold">try</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-fg">   3361</span>                 <span class="ansi-green-intense-fg ansi-bold">return</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>_engine<span class="ansi-yellow-intense-fg ansi-bold">.</span>get_loc<span class="ansi-yellow-intense-fg ansi-bold">(</span>casted_key<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+
+<span class="ansi-green-intense-fg ansi-bold">D:\SEM-6_MATERIALS\Databases\Anaconda\lib\site-packages\pandas\core\indexes\base.py</span> in <span class="ansi-cyan-fg">_maybe_cast_indexer</span><span class="ansi-blue-intense-fg ansi-bold">(self, key)</span>
+<span class="ansi-green-fg">   5699</span>         """
+<span class="ansi-green-fg">   5700</span>         <span class="ansi-green-intense-fg ansi-bold">if</span> <span class="ansi-green-intense-fg ansi-bold">not</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>is_floating<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-intense-fg ansi-bold">-&gt; 5701</span><span class="ansi-yellow-intense-fg ansi-bold">             </span><span class="ansi-green-intense-fg ansi-bold">return</span> com<span class="ansi-yellow-intense-fg ansi-bold">.</span>cast_scalar_indexer<span class="ansi-yellow-intense-fg ansi-bold">(</span>key<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">   5702</span>         <span class="ansi-green-intense-fg ansi-bold">return</span> key
+<span class="ansi-green-fg">   5703</span> 
+
+<span class="ansi-red-intense-fg ansi-bold">KeyboardInterrupt</span>: </pre>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     Bahrain recently 2020 reported having 100% Trained Teachers for primary education. This data remained consistent with the previous year's numbers, i.e., 2019. In Bahrain, the average Trained teacher from 2011 to 2020 is around 83%. In 2011 Bahrain reported that around 80% of the trained teachers in both the Male and Female categories. From 2011 to 2017, the ratio of trained teachers in primary education increased slowly. Whereas, from 2017 to 2018, it was a sudden increase. The data shows that the % of trained female teachers in Bahrain is slightly more significant than the % of trained male teachers. There is no gender discrimination in Bahrain as per their constitution formed in 2002. The result of having more trained female teachers than males shows the openness of the country Bahrain. Another reason for the increased trained teacher can be due to the internet. With the help of the internet, more and more teachers in Bahrain can become trained professionals.
+    </p>
+    <p>
+     Caribbean countries are a few countries that lag in terms of primary education. Their number of Trained teachers is not satisfying. However, the number of Trained teachers in females has a significantly higher percentage than Male trained teachers and this is true after the fact that most of the Teachers in Caribbean countries are Female. Over the years, Trained female teachers have gone from 77% to around 88% whereas the number of trained male teachers increased by only 4%. This is seen because of low-level remuneration, many of the trained teachers leave the profession to take up more lucrative posts in the private sector or migrate to countries like the Bahamas.
+    </p>
+    <p>
+     Ghana in particular has seen a relative decrease in the % trained teachers in both males and females. More particularly, in females the % decreased from 88% to 77%. The explanation for this is that the percentage of female teachers gradually increased relatively. As more instructors arrived, it became increasingly difficult to train them. Also, Ghana is a country suffering from gender discrimination, females are not allowed many freedoms. Therefore, females are kept untrained. However, the % of trained male teachers initially decreased because more and more males were becoming teachers; it was challenging for them to be trained. However, in the end % of trained male teachers will remain the same in 2020 as in 2000.
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [14]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-python">
+        <pre><span></span><span class="c1"># Net Enrollment Rate</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+
+
+<span class="n">iris_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"./data/Data_final (1).csv"</span><span class="p">,</span> <span class="n">index_col</span> <span class="o">=</span> <span class="s2">"Year"</span><span class="p">)</span>
+
+<span class="c1"># mean_value = iris_df['Net Enrollment Male'].mean()</span>
+<span class="c1"># iris_df['Net Enrollment Male'].fillna(value=mean_value, inplace=True)</span>
+
+<span class="c1"># mean_value = iris_df['Net Enrollment Female'].mean()</span>
+<span class="c1"># iris_df['Net Enrollment Female'].fillna(value=mean_value, inplace=True)</span>
+
+<span class="c1"># mean_value = iris_df['Net Enrollment'].mean()</span>
+<span class="c1"># iris_df['Net Enrollment'].fillna(value=mean_value, inplace=True)</span>
+
+
+<span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1960</span><span class="p">,</span><span class="mi">2000</span><span class="p">)]</span>
+<span class="n">iris_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Net Enrollment"</span><span class="p">,</span><span class="s2">"Net Enrollment Female"</span><span class="p">,</span><span class="s2">"Net Enrollment Male"</span><span class="p">]</span>
+<span class="n">iris_df</span> <span class="o">=</span> <span class="n">iris_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span> <span class="o">=</span> <span class="n">r</span><span class="p">)</span>
+
+
+<span class="c1"># print(iris_df.shape)</span>
+<span class="c1"># ratio = []</span>
+<span class="c1"># for i in range(2138):</span>
+<span class="c1">#   ratio.append(iris_df.iloc[i]['Net Enrollment Female']/iris_df.iloc[i]['Net Enrollment Male'])</span>
+<span class="c1"># # print(ratio)</span>
+
+<span class="c1"># iris_df['ratio'] = ratio</span>
+
+<span class="c1"># print(iris_df.ratio)</span>
+<span class="c1"># r = ["Net Enrollment","Net Enrollment Female","Net Enrollment Male"]</span>
+<span class="c1"># iris_df = iris_df.dropna(subset = r)</span>
+
+
+<span class="c1"># print(iris_df.head)</span>
+<span class="n">iris_df</span><span class="p">[</span><span class="s1">'Year1'</span><span class="p">]</span> <span class="o">=</span> <span class="n">iris_df</span><span class="o">.</span><span class="n">index</span>
+<span class="c1"># df['Year1']</span>
+<span class="c1"># print(iris_df.Year1)</span>
+<span class="c1"># display(iris_df.Year1.to_string())</span>
+<span class="c1"># iris_df['Net Enrollment'] = iris_df['Net Enrollment']/1000</span>
+
+<span class="c1"># female_pow = []</span>
+<span class="c1"># for i in range(2138):</span>
+<span class="c1">#   female_pow.append( (iris_df.iloc[i]['Net Enrollment Female'])**3 )</span>
+<span class="c1"># iris_df['female_pow'] = female_pow</span>
+<span class="n">iris_df</span> <span class="o">=</span> <span class="n">iris_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'Year1'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter_geo</span><span class="p">(</span><span class="n">iris_df</span><span class="p">,</span> <span class="n">locations</span><span class="o">=</span><span class="s2">"Country Code"</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">"Net Enrollment Female"</span><span class="p">,</span> <span class="n">size_max</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">animation_group</span> <span class="o">=</span> <span class="s2">"Country Name"</span><span class="p">,</span>
+              <span class="n">projection</span><span class="o">=</span><span class="s2">"natural earth"</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">"Country Name"</span><span class="p">,</span> <span class="n">animation_frame</span><span class="o">=</span><span class="s2">"Year1"</span><span class="p">,</span> <span class="n">template</span><span class="o">=</span><span class="s2">"plotly_dark"</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">margin</span><span class="o">=</span><span class="p">{</span><span class="s2">"r"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">"t"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">"l"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">"b"</span><span class="p">:</span><span class="mi">0</span><span class="p">})</span> 
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     This shows % the female enrollment across various countries. The size of the circles shows the relative % of females. If the size is larger, it signifies that the percentage of female enrolment in that nation is higher than in other countries. If the size is more significant, that means that in that particular country % the female enrollment is greater than that of other countries. In the Western Countries we can see that the relative % female enrollment in primary education is lower than that of most other countries. This is due to West Africa having different cultures and having gender discrimination. People in Western Africa do not feel it appropriate to educate women. However, we can see that the % of female enrollment has increased in those countries over the past few years. This is due to more awareness of gender equality and women empowerment. We can also see that India had an initial %female enrollment of around 70 during 2000. However, by 2012 women empowerment and gender equality turned the % to near 90. Similarly, our neighboring country Bhutan had 48% female enrollment. However, in 2018 % female enrollment reached 90%.
+    </p>
+    <p>
+     This data shows how the awareness of gender equality has changed the world. It clearly shows how the %female enrollment in primary education has increased. These changes are due to modernization. Hence, women's empowerment has improved the ratio of females in education. As we know, education is most important. Therefore, educating more females can change the world regarding women's empowerment.
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [15]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-python">
+        <pre><span></span><span class="c1">#pie</span>
+<span class="c1"># Trained teacher vs Total teacher</span>
+<span class="c1"># Primary Trained vs Primary Education Teacher (number)</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="c1">#from google.colab import files</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"./data/Data_final (1).csv"</span><span class="p">)</span>
+<span class="c1"># print(df.head())</span>
+
+<span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1960</span><span class="p">,</span><span class="mi">2000</span><span class="p">)]</span>
+<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Primary Trained"</span><span class="p">,</span><span class="s2">"Primary Education Teacher"</span><span class="p">]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span> <span class="o">=</span> <span class="n">r</span><span class="p">)</span>
+<span class="c1"># print(df.shape)</span>
+<span class="n">Train_no</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1047</span><span class="p">):</span>
+  <span class="n">Train_no</span><span class="o">.</span><span class="n">append</span><span class="p">((</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s2">"Primary Trained"</span><span class="p">])</span><span class="o">*</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s2">"Primary Education Teacher"</span><span class="p">])</span> <span class="p">)</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">'Train_no'</span><span class="p">]</span> <span class="o">=</span> <span class="n">Train_no</span>
+
+<span class="n">sum_train</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span><span class="mi">2021</span><span class="p">):</span>
+  <span class="n">sum_a</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1047</span><span class="p">):</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">'Year'</span><span class="p">]</span> <span class="o">==</span> <span class="n">y</span><span class="p">):</span>
+      <span class="n">sum_a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">'Train_no'</span><span class="p">])</span>
+  <span class="n">sum_train</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">sum_a</span><span class="p">))</span>   
+
+<span class="n">sum_total</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span><span class="mi">2021</span><span class="p">):</span>
+  <span class="n">sum_a</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1047</span><span class="p">):</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">'Year'</span><span class="p">]</span> <span class="o">==</span> <span class="n">y</span><span class="p">):</span>
+      <span class="n">sum_a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">'Primary Education Teacher'</span><span class="p">])</span>
+  <span class="n">sum_total</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">sum_a</span><span class="p">))</span>      
+
+<span class="c1"># print(sum_train)</span>
+<span class="c1"># print(sum_total)</span>
+
+<span class="n">pie_percent</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">21</span><span class="p">):</span>
+  <span class="n">pie_percent</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">sum_train</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="n">sum_total</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="c1">#change values of i in pie_percent[i] and 100-pie_percent[i] to get different pie graphs of repective year </span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">18</span><span class="p">):</span>
+  <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[</span><span class="n">pie_percent</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="mi">100</span><span class="o">-</span><span class="n">pie_percent</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>
+  <span class="n">mylabels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Trained"</span><span class="p">,</span> <span class="s2">"UnTrained"</span><span class="p">]</span>
+
+  <span class="n">explode</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">mylabels</span><span class="p">,</span><span class="n">autopct</span><span class="o">=</span><span class="s1">'</span><span class="si">%1.1f%%</span><span class="s1">'</span><span class="p">,</span> <span class="n">explode</span> <span class="o">=</span> <span class="n">explode</span><span class="p">,</span> <span class="n">shadow</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"World Trained Teacher vs World Non-Trained Teacher"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="s2">" "</span><span class="p">)</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">2000</span><span class="p">))</span>
+   
+  <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">2000</span><span class="p">)</span><span class="o">+</span><span class="s2">".png"</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedImage jp-OutputArea-output">
+       <img src="data:image/png;base64,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"/>
+      </div>
+     </div>
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+       <pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">C:\Users\HPPH~1\AppData\Local\Temp/ipykernel_26392/2401498264.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">     56</span>   plt<span class="ansi-yellow-intense-fg ansi-bold">.</span>savefig<span class="ansi-yellow-intense-fg ansi-bold">(</span>str<span class="ansi-yellow-intense-fg ansi-bold">(</span>i<span class="ansi-yellow-intense-fg ansi-bold">+</span><span class="ansi-cyan-intense-fg ansi-bold">2000</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">+</span><span class="ansi-blue-intense-fg ansi-bold">".png"</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">     57</span>   plt<span class="ansi-yellow-intense-fg ansi-bold">.</span>show<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-intense-fg ansi-bold">---&gt; 58</span><span class="ansi-yellow-intense-fg ansi-bold">   </span>files<span class="ansi-yellow-intense-fg ansi-bold">.</span>download<span class="ansi-yellow-intense-fg ansi-bold">(</span>str<span class="ansi-yellow-intense-fg ansi-bold">(</span>i<span class="ansi-yellow-intense-fg ansi-bold">+</span><span class="ansi-cyan-intense-fg ansi-bold">2000</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">+</span><span class="ansi-blue-intense-fg ansi-bold">".png"</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name 'files' is not defined</pre>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     In 2000 total untrained teachers all over the world were about 17%. However, in 2011 the number of untrained teachers was 27%. The vast majority of the trained teachers were changing professions around those times. The teaching profession was a low self-esteem job. Therefore, all the trained professionals were leaving their jobs and were applying for higher esteem jobs with higher salaries. This gradually increased the percentage of untrained teachers, as did the addition of more teachers worldwide. This gradually increased the percentage of untrained teachers, as did the addition of more teachers worldwide. In 2011, more people became aware of primary education for a country. Therefore, more and more teachers were being trained and people were again interested in the teaching profession. Recognizing the significance of elementary education, every country strives to recruit more teachers by offering competitive wages and preparing them through competitive tests.. Therefore, the pie chart shows a gradual decrease in the percentage of untrained teachers. Also, we see a 7% decrease in the percentage of untrained teachers from the year 2019 to 2020. The reason being, due to covid we shifted from offline mode to online mode. The online mode of education made it easier to train teachers, increasing the number of trained teachers and decreasing the percentage of untrained teachers. Overall, from 2000 to 2020 we see a net decrease in untrained teachers. Therefore, this gives a positive impression about the overall world moving toward modernization and education.
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [17]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-python">
+        <pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">bar_chart_race</span> <span class="k">as</span> <span class="nn">bcr</span>
+
+<span class="c1"># import pandas as pd</span>
+<span class="c1"># from matplotlib import pyplot as plt</span>
+
+<span class="c1"># # Read CSV into pandas</span>
+<span class="c1"># data = pd.read_csv(r"expen_final.csv")</span>
+<span class="c1"># data.head()</span>
+<span class="c1"># df = pd.DataFrame(data)</span>
+
+<span class="c1"># name = df['car'].head(12)</span>
+<span class="c1"># price = df['price'].head(12)</span>
+
+<span class="c1"># # Figure Size</span>
+<span class="c1"># fig = plt.figure(figsize =(10, 7))</span>
+
+<span class="c1"># # Horizontal Bar Plot</span>
+<span class="c1"># plt.bar(name[0:10], price[0:10])</span>
+
+<span class="c1"># # Show Plot</span>
+<span class="c1"># plt.show()</span>
+<span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"./data/expen_final.csv"</span><span class="p">,</span> <span class="n">index_col</span> <span class="o">=</span> <span class="s2">"Year"</span><span class="p">)</span>
+<span class="c1"># df.head()</span>
+<span class="c1"># df.isnull().sum(axis =0)</span>
+
+<span class="c1">#perc = 75.0</span>
+<span class="c1">#min_count =  int(((100-perc)/100)*df.shape[0] + 1)</span>
+<span class="c1">#df = df.dropna( axis=1, </span>
+<span class="c1">#                thresh=min_count)</span>
+<span class="n">ls</span>  <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">g</span><span class="p">):</span>
+  <span class="n">var</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">ls</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+  <span class="c1">#var = df[ls[i]]</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">var</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">):</span>
+    <span class="c1">#df.drop(ls[i], axis =1)</span>
+    <span class="k">del</span> <span class="n">df</span><span class="p">[</span><span class="n">ls</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+
+<span class="n">l</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">x</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+  <span class="n">m</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+  <span class="n">df</span><span class="p">[</span><span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="n">m</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+<span class="n">bcr</span><span class="o">.</span><span class="n">bar_chart_race</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="s1">'desc'</span><span class="p">,</span> <span class="n">steps_per_period</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"Expenditure of countires in different years"</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span>  <span class="n">n_bars</span> <span class="o">=</span> <span class="mi">60</span><span class="p">)</span>
+</pre>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+       <pre>D:\SEM-6_MATERIALS\Databases\Anaconda\lib\site-packages\bar_chart_race\_make_chart.py:286: UserWarning:
+
+FixedFormatter should only be used together with FixedLocator
+
+D:\SEM-6_MATERIALS\Databases\Anaconda\lib\site-packages\bar_chart_race\_make_chart.py:287: UserWarning:
+
+FixedFormatter should only be used together with FixedLocator
+
+</pre>
+      </div>
+     </div>
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+       <pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">RuntimeError</span>                              Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">D:\SEM-6_MATERIALS\Databases\Anaconda\lib\site-packages\bar_chart_race\_make_chart.py</span> in <span class="ansi-cyan-fg">make_animation</span><span class="ansi-blue-intense-fg ansi-bold">(self)</span>
+<span class="ansi-green-fg">    427</span>             <span class="ansi-green-intense-fg ansi-bold">if</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>html<span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-intense-fg ansi-bold">--&gt; 428</span><span class="ansi-yellow-intense-fg ansi-bold">                 </span>ret_val <span class="ansi-yellow-intense-fg ansi-bold">=</span> anim<span class="ansi-yellow-intense-fg ansi-bold">.</span>to_html5_video<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">    429</span>                 <span class="ansi-green-intense-fg ansi-bold">try</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+
+<span class="ansi-green-intense-fg ansi-bold">D:\SEM-6_MATERIALS\Databases\Anaconda\lib\site-packages\matplotlib\animation.py</span> in <span class="ansi-cyan-fg">to_html5_video</span><span class="ansi-blue-intense-fg ansi-bold">(self, embed_limit)</span>
+<span class="ansi-green-fg">   1347</span>                 <span class="ansi-red-intense-fg ansi-bold"># appropriate size for the tag</span>
+<span class="ansi-green-intense-fg ansi-bold">-&gt; 1348</span><span class="ansi-yellow-intense-fg ansi-bold">                 </span>Writer <span class="ansi-yellow-intense-fg ansi-bold">=</span> writers<span class="ansi-yellow-intense-fg ansi-bold">[</span>mpl<span class="ansi-yellow-intense-fg ansi-bold">.</span>rcParams<span class="ansi-yellow-intense-fg ansi-bold">[</span><span class="ansi-blue-intense-fg ansi-bold">'animation.writer'</span><span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">]</span>
+<span class="ansi-green-fg">   1349</span>                 writer = Writer(codec='h264',
+
+<span class="ansi-green-intense-fg ansi-bold">D:\SEM-6_MATERIALS\Databases\Anaconda\lib\site-packages\matplotlib\animation.py</span> in <span class="ansi-cyan-fg">__getitem__</span><span class="ansi-blue-intense-fg ansi-bold">(self, name)</span>
+<span class="ansi-green-fg">    150</span>             <span class="ansi-green-intense-fg ansi-bold">return</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>_registered<span class="ansi-yellow-intense-fg ansi-bold">[</span>name<span class="ansi-yellow-intense-fg ansi-bold">]</span>
+<span class="ansi-green-intense-fg ansi-bold">--&gt; 151</span><span class="ansi-yellow-intense-fg ansi-bold">         </span><span class="ansi-green-intense-fg ansi-bold">raise</span> RuntimeError<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">f"Requested MovieWriter ({name}) not available"</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">    152</span> 
+
+<span class="ansi-red-intense-fg ansi-bold">RuntimeError</span>: Requested MovieWriter (ffmpeg) not available
+
+During handling of the above exception, another exception occurred:
+
+<span class="ansi-red-intense-fg ansi-bold">Exception</span>                                 Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">C:\Users\HPPH~1\AppData\Local\Temp/ipykernel_26392/3644274151.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">     46</span>   df<span class="ansi-yellow-intense-fg ansi-bold">[</span>l<span class="ansi-yellow-intense-fg ansi-bold">[</span>i<span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">.</span>fillna<span class="ansi-yellow-intense-fg ansi-bold">(</span>value <span class="ansi-yellow-intense-fg ansi-bold">=</span> m<span class="ansi-yellow-intense-fg ansi-bold">,</span> inplace <span class="ansi-yellow-intense-fg ansi-bold">=</span> <span class="ansi-green-intense-fg ansi-bold">True</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">     47</span> 
+<span class="ansi-green-intense-fg ansi-bold">---&gt; 48</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>bcr<span class="ansi-yellow-intense-fg ansi-bold">.</span>bar_chart_race<span class="ansi-yellow-intense-fg ansi-bold">(</span>df<span class="ansi-yellow-intense-fg ansi-bold">=</span>df<span class="ansi-yellow-intense-fg ansi-bold">,</span> sort<span class="ansi-yellow-intense-fg ansi-bold">=</span><span class="ansi-blue-intense-fg ansi-bold">'desc'</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> steps_per_period<span class="ansi-yellow-intense-fg ansi-bold">=</span><span class="ansi-cyan-intense-fg ansi-bold">3</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> title<span class="ansi-yellow-intense-fg ansi-bold">=</span><span class="ansi-blue-intense-fg ansi-bold">"Expenditure of countires in different years"</span><span class="ansi-yellow-intense-fg ansi-bold">,</span>figsize<span class="ansi-yellow-intense-fg ansi-bold">=</span><span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-cyan-intense-fg ansi-bold">5</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-cyan-intense-fg ansi-bold">9</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">,</span>  n_bars <span class="ansi-yellow-intense-fg ansi-bold">=</span> <span class="ansi-cyan-intense-fg ansi-bold">60</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+
+<span class="ansi-green-intense-fg ansi-bold">D:\SEM-6_MATERIALS\Databases\Anaconda\lib\site-packages\bar_chart_race\_make_chart.py</span> in <span class="ansi-cyan-fg">bar_chart_race</span><span class="ansi-blue-intense-fg ansi-bold">(df, filename, orientation, sort, n_bars, fixed_order, fixed_max, steps_per_period, period_length, interpolate_period, label_bars, bar_size, period_label, period_fmt, period_summary_func, perpendicular_bar_func, figsize, cmap, title, title_size, bar_label_size, tick_label_size, shared_fontdict, scale, writer, fig, dpi, bar_kwargs, filter_column_colors)</span>
+<span class="ansi-green-fg">    781</span>                         figsize<span class="ansi-yellow-intense-fg ansi-bold">,</span> cmap<span class="ansi-yellow-intense-fg ansi-bold">,</span> title<span class="ansi-yellow-intense-fg ansi-bold">,</span> title_size<span class="ansi-yellow-intense-fg ansi-bold">,</span> bar_label_size<span class="ansi-yellow-intense-fg ansi-bold">,</span> tick_label_size<span class="ansi-yellow-intense-fg ansi-bold">,</span>
+<span class="ansi-green-fg">    782</span>                         shared_fontdict, scale, writer, fig, dpi, bar_kwargs, filter_column_colors)
+<span class="ansi-green-intense-fg ansi-bold">--&gt; 783</span><span class="ansi-yellow-intense-fg ansi-bold">     </span><span class="ansi-green-intense-fg ansi-bold">return</span> bcr<span class="ansi-yellow-intense-fg ansi-bold">.</span>make_animation<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">    784</span> 
+<span class="ansi-green-fg">    785</span> <span class="ansi-green-intense-fg ansi-bold">def</span> load_dataset<span class="ansi-yellow-intense-fg ansi-bold">(</span>name<span class="ansi-yellow-intense-fg ansi-bold">=</span><span class="ansi-blue-intense-fg ansi-bold">'covid19'</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+
+<span class="ansi-green-intense-fg ansi-bold">D:\SEM-6_MATERIALS\Databases\Anaconda\lib\site-packages\bar_chart_race\_make_chart.py</span> in <span class="ansi-cyan-fg">make_animation</span><span class="ansi-blue-intense-fg ansi-bold">(self)</span>
+<span class="ansi-green-fg">    444</span>             <span class="ansi-green-intense-fg ansi-bold">else</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-fg">    445</span>                 message <span class="ansi-yellow-intense-fg ansi-bold">=</span> str<span class="ansi-yellow-intense-fg ansi-bold">(</span>e<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-intense-fg ansi-bold">--&gt; 446</span><span class="ansi-yellow-intense-fg ansi-bold">             </span><span class="ansi-green-intense-fg ansi-bold">raise</span> Exception<span class="ansi-yellow-intense-fg ansi-bold">(</span>message<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">    447</span>         <span class="ansi-green-intense-fg ansi-bold">finally</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-fg">    448</span>             plt<span class="ansi-yellow-intense-fg ansi-bold">.</span>rcParams <span class="ansi-yellow-intense-fg ansi-bold">=</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>orig_rcParams
+
+<span class="ansi-red-intense-fg ansi-bold">Exception</span>: You do not have ffmpeg installed on your machine. Download
+                            ffmpeg from here: https://www.ffmpeg.org/download.html.
+                            
+                            Matplotlib's original error message below:
+
+                            Requested MovieWriter (ffmpeg) not available
+                            </pre>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     From the plots we can see that the expenditure on primary education out of total expenditure on education is more for under-developed countries. Whereas, the developed countries have less expenditure on primary education out of total expenditure on education. For e.g. Finland is a country with the highest literacy rate, it spends less on primary education than higher education. Whereas, the region of West Africa spends more than 50% of its total expenditure on primary education. Because, under-developed and developing countries require more focus on primary education since it is an essential investment in developing a country.
+    </p>
+    <p>
+     Similarly, for South Africa we can see that the percentage spent on primary education is more significant from 2000 to 2012. Since then, several countries in South Africa have grown to the point where the emphasis has shifted from primary education to higher education.
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h1 id="OVERALL-CONCLUSION">
+     OVERALL CONCLUSION
+     <a class="anchor-link" href="#OVERALL-CONCLUSION">
+      ¶
+     </a>
+    </h1>
+    <p>
+     The overall conclusion is that the importance of primary education is taken seriously by every country. Primary education is an essential investment for all developing countries and developed countries.
     </p>
    </div>
   </div>
